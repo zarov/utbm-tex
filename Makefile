@@ -10,7 +10,7 @@ OUT 		= report_merged.pdf
 all: report #join
 
 report: $(REPORT).tex
-	pdflatex $?
+	pdflatex -shell-escape $?
 
 join: $(REPORT).pdf
 	gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$(OUT) $(MAIN_PAGE) $(REPORT) $(END_PAGE) 
