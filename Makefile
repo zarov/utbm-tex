@@ -1,12 +1,19 @@
-OUT = report_st50.pdf
+.PHONY: report
+.PHONY: join
+.PHONY: clean
+
+REPORT		= report
+MAIN_PAGE 	= main_page.pdf
+END_PAGE 	= end_page.pdf
+OUT 		= report_merged.pdf
 
 all: report #join
 
-report: report.tex
+report: $(REPORT).tex
 	pdflatex $?
 
-join:
-	gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$(OUT) main_page.pdf report.pdf end_page.pdf 
+join: $(REPORT).pdf
+	gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$(OUT) $(MAIN_PAGE) $(REPORT) $(END_PAGE) 
 
 clean:
 	rm -vf *.{aux,log,lof,toc,out,pdf,pyg}
