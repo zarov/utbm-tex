@@ -5,11 +5,11 @@ OUT 	= report_st50.pdf
 
 all: report #join
 
-report: ABT-Internship_Report.tex
+report: report.tex
 	$(CC) $?
 
 join:
-	$(JOIN) --rotateoversize 'false' --outfile $(OUT) couverture.pdf ABT-Internship_Report.pdf end.pdf
+	$(JOIN) --rotateoversize 'false' --outfile $(OUT) couverture.pdf report.pdf end.pdf
 
 clean:
 	rm -vf *.{aux,log,lof,toc,out,pdf,pyg}
