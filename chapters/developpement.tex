@@ -1,0 +1,29 @@
+\chapter*{Chapter}
+
+\section{Section}
+
+\subsection{Subsection}
+
+Text. \\
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{images/30-hibernate.png} 
+    \end{center}
+    \caption{Logo du framework Hibernate}
+\end{figure}
+
+\clearpage
+\begin{figure}[h]
+    \begin{center}
+        \begin{minted}[bgcolor=bg,tabsize=4]{java}
+public List<String> getAllRefsBySessionId(long sessionId) {
+    JPAQuery q = new JPAQuery(entityManager);
+    q.from(QDocument.document);
+    q.where(QDocument.document.sessionId.eq(sessionId));
+    return q.list(QDocument.document.reference);
+}
+        \end{minted}
+        \caption{Exemple code}
+    \end{center}
+\end{figure}

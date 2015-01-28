@@ -1,0 +1,85 @@
+\documentclass[a4paper,10pt,twoside,openright]{report}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{color,colortbl}
+\usepackage{graphicx}			
+\usepackage{hyphenat}			
+\usepackage{style/phdthesis}	
+\usepackage{fancyhdr}
+\usepackage[section]{placeins}
+\usepackage{subcaption}
+\usepackage{url}
+
+% Citation
+\usepackage[strict]{changepage}
+\usepackage{framed}
+
+\usepackage{minted}				% Code coloring
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+
+\renewcommand*\rmdefault{phv}	% Helvetica FTW
+
+% Citation
+\definecolor{formalshade}{rgb}{0.98,0.98,1}
+\definecolor{darkblue}{rgb}{0,0.41,0.7}
+
+\newenvironment{formal}{
+  \def\FrameCommand{
+    \hspace{1pt}
+    {\color{darkblue}\vrule width 2pt}
+    \colorbox{formalshade}
+  }
+  \MakeFramed{\advance\hsize-\width\FrameRestore}
+  \noindent\hspace{-4.55pt} % disable indenting first paragraph
+  \begin{adjustwidth}{}{7pt}
+}
+{
+  \vspace{1pt}\end{adjustwidth}\endMakeFramed
+}
+
+\title{ST40 – Rapport de stage}
+\author{Adrien Berthet}
+
+% Début du document
+\begin{document}
+
+% Introduction
+\input{chapters/introduction.tex}
+\addcontentsline{toc}{chapter}{Introduction}
+
+% Remerciements
+\input{chapters/remerciements.tex}
+\addcontentsline{toc}{chapter}{Remerciements}
+
+% Sommaire
+\setcounter{tocdepth}{3}
+\renewcommand{\contentsname}{Sommaire}
+\tableofcontents
+
+% Présentation AWL
+\input{chapters/presentation.tex}
+
+% Partie 1 - La Démat
+\input{chapters/dematerialisation.tex}
+
+% Partie 2 - Application générique
+\input{chapters/developpement.tex}
+
+% Conclusion
+\input{chapters/conclusion.tex}
+\addcontentsline{toc}{chapter}{Conclusion}
+
+% Bibliographie
+\input{chapters/bibliographie.tex}
+\addcontentsline{toc}{chapter}{Bibliographie}
+
+% Table des figures
+\listoffigures
+
+% Annexes
+\appendix
+\input{chapters/annexes.tex}
+
+\end{document}
