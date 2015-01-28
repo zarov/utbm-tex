@@ -1,14 +1,11 @@
-\documentclass[a4paper,10pt,twoside,openright]{report}
+\documentclass[a4paper,10pt,twoside,openright]{utbmreport}
 
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[french]{babel}
-\usepackage{color,colortbl}
-\usepackage{graphicx}			
-\usepackage{hyphenat}			
-\usepackage{style/phdthesis}	
-\usepackage{fancyhdr}
+\usepackage[french]{babel}	
+\usepackage{hyphenat}
 \usepackage[section]{placeins}
+\usepackage{style/phdthesis}
 \usepackage{subcaption}
 \usepackage{url}
 
@@ -19,31 +16,22 @@
 \usepackage{minted}				% Code coloring
 \definecolor{bg}{rgb}{0.95,0.95,0.95}
 
-\renewcommand*\rmdefault{phv}	% Helvetica FTW
-
-% Citation
-\definecolor{formalshade}{rgb}{0.98,0.98,1}
-\definecolor{darkblue}{rgb}{0,0.41,0.7}
-
-\newenvironment{formal}{
-  \def\FrameCommand{
-    \hspace{1pt}
-    {\color{darkblue}\vrule width 2pt}
-    \colorbox{formalshade}
-  }
-  \MakeFramed{\advance\hsize-\width\FrameRestore}
-  \noindent\hspace{-4.55pt} % disable indenting first paragraph
-  \begin{adjustwidth}{}{7pt}
-}
-{
-  \vspace{1pt}\end{adjustwidth}\endMakeFramed
-}
-
-\title{ST40 – Rapport de stage}
-\author{Adrien Berthet}
-
 % Début du document
 \begin{document}
+
+% Title page
+\begin{titlepage}
+	\frontimage{images/cover.jpg}
+	\reporttitle{My awesome Internship}{Internship report - Fall 2014}
+	\makebox[\textwidth]{\colorbox{lightgrey}{\begin{minipage}{\paperwidth}
+		\reportauthor{John \bsc{Doe}}
+		\departement{Computer Science}{Image, Interaction and Virtual Reality}
+		\firm{Google Inc.}{Palo Alto\\California}{http://www.google.com}
+		\mentor{Larry Page}{CEO}
+		\follower{Mike Tyson}{Professor at UTBM}
+	\end{minipage}}}
+	\firmlogo{images/logo.png}
+\end{titlepage}
 
 % Introduction
 \input{chapters/introduction.tex}
