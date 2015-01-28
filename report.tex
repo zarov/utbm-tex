@@ -2,21 +2,21 @@
 
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[french]{babel}	
+\usepackage[english]{babel}	
 \usepackage{hyphenat}
 \usepackage[section]{placeins}
 \usepackage{style/phdthesis}
 \usepackage{subcaption}
 \usepackage{url}
 
-% Citation
-\usepackage[strict]{changepage}
-\usepackage{framed}
-
-\usepackage{minted}				% Code coloring
+% Code coloring
+\usepackage{minted}
 \definecolor{bg}{rgb}{0.95,0.95,0.95}
 
-% Début du document
+%% Dummy content - DELETE IT
+\usepackage{blindtext}
+
+%% DOCUMENT
 \begin{document}
 
 % Title page
@@ -24,7 +24,7 @@
 	\frontimage{images/cover.jpg}
 	\reporttitle{My awesome Internship}{Internship report - Fall 2014}
 	\makebox[\textwidth]{\colorbox{lightgrey}{\begin{minipage}{\paperwidth}
-		\reportauthor{John \bsc{Doe}}
+		\reportauthor{John Doe}
 		\departement{Computer Science}{Image, Interaction and Virtual Reality}
 		\firm{Google Inc.}{Palo Alto\\California}{http://www.google.com}
 		\mentor{Larry Page}{CEO}
@@ -33,41 +33,38 @@
 	\firmlogo{images/logo.png}
 \end{titlepage}
 
+%% First part (introduction, thanks...) is 0x-denominated
 % Introduction
-\input{chapters/introduction.tex}
+\input{chapters/01-introduction.tex}
 \addcontentsline{toc}{chapter}{Introduction}
-
-% Remerciements
-\input{chapters/remerciements.tex}
-\addcontentsline{toc}{chapter}{Remerciements}
-
-% Sommaire
+% Thanks
+\input{chapters/02-thanks.tex}
+\addcontentsline{toc}{chapter}{Thanks}
+% Table of contents
 \setcounter{tocdepth}{3}
-\renewcommand{\contentsname}{Sommaire}
 \tableofcontents
 
-% Présentation AWL
-\input{chapters/presentation.tex}
+%% Second part (chapters) is 1x-denominated
+% Chapter 1
+\input{chapters/11-chapter1.tex}
+% Chapter 2
+\input{chapters/12-chapter2.tex}
+% Chapter 3
+\input{chapters/13-chapter3.tex}
 
-% Partie 1 - La Démat
-\input{chapters/dematerialisation.tex}
-
-% Partie 2 - Application générique
-\input{chapters/developpement.tex}
-
+%% Last part is 2x-denominated
 % Conclusion
-\input{chapters/conclusion.tex}
+\input{chapters/21-conclusion.tex}
 \addcontentsline{toc}{chapter}{Conclusion}
-
-% Bibliographie
-\input{chapters/bibliographie.tex}
-\addcontentsline{toc}{chapter}{Bibliographie}
-
-% Table des figures
+% Bibliography
+\input{chapters/22-bibliography.tex}
+\addcontentsline{toc}{chapter}{Bibliography}
+% List of figures
 \listoffigures
 
-% Annexes
+%% Appendixes are 3x-denominated
 \appendix
-\input{chapters/annexes.tex}
+\input{chapters/31-annexeA.tex}
+\input{chapters/32-annexeB.tex}
 
 \end{document}
