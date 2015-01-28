@@ -1,15 +1,12 @@
-# ST50 report compilation
-CC		= pdflatex
-JOIN 	= pdfjoin 
-OUT 	= report_st50.pdf
+OUT = report_st50.pdf
 
 all: report #join
 
 report: report.tex
-	$(CC) $?
+	pdflatex $?
 
 join:
-	$(JOIN) --rotateoversize 'false' --outfile $(OUT) couverture.pdf report.pdf end.pdf
+	gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$(OUT) main_page.pdf report.pdf end_page.pdf 
 
 clean:
 	rm -vf *.{aux,log,lof,toc,out,pdf,pyg}
