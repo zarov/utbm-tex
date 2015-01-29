@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt,twoside,openright]{utbmreport}
+\documentclass[a4paper,11pt,twoside,openright]{utbmreport}
 
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
@@ -7,11 +7,13 @@
 \usepackage[section]{placeins}
 \usepackage{style/phdthesis}
 \usepackage{subcaption}
-\usepackage{url}
 
 % Code coloring
 \usepackage{minted}
 \definecolor{bg}{rgb}{0.95,0.95,0.95}
+
+%% Main color
+\definecolor{maincolor}{rgb}{0, 0.41, 0.7}
 
 %% Dummy content - DELETE IT
 \usepackage{blindtext}
@@ -21,16 +23,11 @@
 
 % Title page
 \begin{titlepage}
-	\frontimage{images/cover.jpg}
-	\reporttitle{My awesome Internship}{Internship report - Fall 2014}
-	\makebox[\textwidth]{\colorbox{lightgrey}{\begin{minipage}{\paperwidth}
-		\reportauthor{John Doe}
-		\departement{Computer Science}{Image, Interaction and Virtual Reality}
-		\firm{Google Inc.}{Palo Alto\\California}{http://www.google.com}
-		\mentor{Larry Page}{CEO}
-		\follower{Mike Tyson}{Professor at UTBM}
-	\end{minipage}}}
-	\firmlogo{images/logo.png}
+	\frontlayout{maincolor}{images/cover.jpg}{images/logo.png}
+	\reporttitle{My awesome Internship\\Data-mining}{Internship report - Fall 2014}
+	\reportauthor{John \uppercase{Doe}}{Computer Science}{Image, Interaction and Virtual Reality}
+	\firm{Google Inc.}{Palo Alto\\California}{http://www.google.com}
+	\mentors{Larry Page}{Sir Paul McCartney}
 \end{titlepage}
 
 %% First part (introduction, thanks...) is 0x-denominated
