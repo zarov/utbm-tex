@@ -12,13 +12,15 @@
 \RequirePackage{color, colortbl}
 \RequirePackage{url}
 \RequirePackage{tikz}
-%\RequirePackage{minted}
+\RequirePackage{framed, changepage}
 
 %% Main color
 \definecolor{black}{rgb}{0, 0, 0}
 \definecolor{darkgrey}{rgb}{0.24, 0.23, 0.26}
 \definecolor{lightgrey}{rgb}{0.84, 0.84, 0.84}
 \definecolor{white}{rgb}{1, 1, 1}
+\definecolor{quotebg}{rgb}{0.98, 0.98, 1}
+\definecolor{maincolor}{rgb}{0, 0.7, 0.41}
 
 %% Font
 % Officially, the font used by UTBM is The Sans, but it costs a lot ;)
@@ -41,7 +43,7 @@
 		\includegraphics[height=50px]{#3}
 	\end{textblock*}
 	\begin{textblock*}{21cm}(11.9cm, 17cm)
-		\includegraphics[height=50px]{images/utbm.jpg}
+		\includegraphics[height=50px]{images/001-utbm.jpg}
 	\end{textblock*}
 }
 
@@ -99,7 +101,7 @@
 		\includegraphics[height=50px]{#1}
 	\end{textblock*}
 	\begin{textblock*}{19.3cm}(10.2cm, 27cm)
-		\includegraphics[height=50px]{images/utbm.jpg}
+		\includegraphics[height=50px]{images/001-utbm.jpg}
 	\end{textblock*}
 }
 
@@ -134,6 +136,7 @@
  	{\end{textblock*}}
 
 \newcommand*\cleartoleftpage{%
+\newcommand*\cleartoleftpage{ % Clear to left page, for back cover
   \clearpage
   \ifodd\value{page}\hbox{}\newpage\fi
 }
@@ -148,3 +151,18 @@
 %		\label{#4}
 %	\end{figure}
 %}
+%% Quote
+\newenvironment{uquote}[2][]{
+	\def\FrameCommand{
+		\hspace{1pt}
+		{\color{maincolor}\vrule width 2pt}
+		\colorbox{quotebg}}
+	\MakeFramed{\advance\hsize-\width\FrameRestore}
+	\textit{#2 :}
+	\noindent\hspace{-4.55pt}
+	\begin{adjustwidth}{}{7pt}
+}
+{
+	\vspace{1pt}\end{adjustwidth}
+	\endMakeFramed
+}
