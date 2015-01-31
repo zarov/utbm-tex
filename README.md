@@ -3,7 +3,6 @@
 ## Dependencies
 Dependencies on OS X
 ```bash
-brew install ghostscript
 sudo easy_install Pygments
 ```
 
