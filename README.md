@@ -24,6 +24,7 @@ The minted package is used to add code in the report. You need to install pygmen
 \begin{uquote}{My source}
 	This is a citation
 \end{uquote}
+```
 
 ### Compilation
 ```bash
