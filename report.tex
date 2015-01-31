@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt,twoside,openright]{utbmreport}
+\documentclass{utbmreport}
 
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
@@ -63,5 +63,16 @@
 \appendix
 \input{chapters/31-annexeA.tex}
 \input{chapters/32-annexeB.tex}
+
+%% Cover page
+\begin{backcover}{images/logo.png}
+	\keywords{First keyword}{Second keyword}{Third keyword}{Fourth keyword}
+	\reportinfo{John \uppercase{Doe}}{Internship report — Fall 2014}
+
+	\blindtext
+	\blindtext
+
+	\firmback{Google Inc.}{Palo Alto\\California}{http://www.google.com}
+\end{backcover}
 
 \end{document}
