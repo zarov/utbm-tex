@@ -1,3 +1,9 @@
+# vim files
+*.swp
+
+# don't track pdfs
+*.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
