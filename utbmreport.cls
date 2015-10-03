@@ -135,22 +135,11 @@
 	\begin{textblock*}{19.3cm}(-4.1cm, 10.5cm)\Large}
  	{\end{textblock*}}
 
-\newcommand*\cleartoleftpage{%
 \newcommand*\cleartoleftpage{ % Clear to left page, for back cover
   \clearpage
   \ifodd\value{page}\hbox{}\newpage\fi
 }
 
-%% Implement code
-%\newcommand{\code}[4]{
-%	\begin{figure}
-%		\begin{minted}[bgcolor=bg,tabsize=4]{#1}
-%#2
-%		\end{minted}
-%	\color{black} #1		\caption{#3}
-%		\label{#4}
-%	\end{figure}
-%}
 %% Quote
 \newenvironment{uquote}[2][]{
 	\def\FrameCommand{
